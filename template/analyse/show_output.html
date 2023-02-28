@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction</title>
+    <head>
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <title>popup prediction </title>
+    <link rel="stylesheet" href="{% static 'analyse/showpredicted/showpredicted.css' %}">
+
+  <link rel="stylesheet" href="{% static 'analyse/predicted/predicted.css' %}">
+
+</head>
+<body >
+<div class="container"  >
+<!--        <button   type="submit" class="btn" onclick="openPopup()">submit</button>-->
+<!--        <div class="popup" id="popup" style="height: 500px; width: 800px; background-color: white; text-align:center;">-->
+<!--        <img src="{% static 'analyse/showpredicted/404-tick.png' %}">-->
+<!--            <table style="width:710px; background-color: white;" >-->
+<!--                <h1 style="background-color:white">Predicted</h1>-->
+<!--                <tr>-->
+<!--                <th style="text-align: center">name</th>-->
+<!--                <th style="text-align: center">symptoms</th>-->
+<!--                <th style="text-align: center">Dieases</th>-->
+<!--                 </tr>-->
+<!--                {% for x in data %}-->
+<!--                <tr>-->
+<!--                <td>{{x.patientname}}</td>-->
+<!--                <td>{{x.pat_sym}}</td>-->
+<!--                <td>{{x.patdieases}}</td>-->
+<!--               </tr>-->
+<!--                {% endfor %}-->
+<!--            </table>-->
+<!--&lt;!&ndash;        <h2 style="background-color:white;">Thankyou</h2>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        <p style="background-color:white;">your details has been submitted sucessfully</p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="button">Ok</button>&ndash;&gt;-->
+<!--            <button style="background-color:grey;" type="button" onclick="closePopup()"  >ok</button>-->
+
+<!--    </div>-->
+
+<!-- partial:index.partial.html -->
+<center><table >
+
+  <h1> PREDICTED DETAILS </h1>
+  <thead>
+    <tr>
+<!--      <th>s.no-->
+      <th><center>Name</center>
+      <th><center>Email</center>
+      <th style="text-align:50%;"><center>Getdetails</center></th>
+
+  </thead>
+  <tbody>
+  {% for x in data %}
+    <tr>
+      <td>{{x.patientname}}
+      <td>{{x.email}}
+        <td style="font-size:25px;"> <a href="/show_output1/{{x.id}}/"> <button style="padding:4px 10px; font-size:14px;"   type="submit" class="btn" onclick="openPopup()">show</button></a></td>
+<!--       <td> <a href="/show/{{x.id}}/">show</a></td>-->
+    </tr>
+<!--      <td><a href="/getdetails/{{x.id}}/"><button style="background-color:white;"><i class="fas fa-arrow-circle-right">getdetails </i></button></a>-->
+
+  {% endfor %}
+
+  </tbody>
+</table></center>
+<!-- partial -->
+
+
+
+
+
+
+<!--</div>-->
+<script>
+    let popup=document.getElementById("popup");
+
+    function openPopup(){
+    popup.classList.add("open-popup");
+}
+    function closePopup(){
+    popup.classList.remove("open-popup");
+}
+</script>
+
+
+</body>
+</html>

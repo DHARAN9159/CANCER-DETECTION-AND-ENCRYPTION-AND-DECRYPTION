@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <style>
+
+  .buttons button{
+  position: relative;
+  height: 30px;
+  width: 90px;
+  margin: 0 35px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.buttons button:first-child:hover{
+  background: linear-gradient( #1f8787, #1f8787);
+  background-size: 200%;
+}
+<!--button:last-child:hover{-->
+<!--  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);-->
+<!--  background-size: 400%;-->
+}
+.buttons  button:first-child:before,
+.buttons  button:last-child:before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.buttons button:first-child:hover:before,
+.buttons  button:last-child:hover:before{
+  opacity: 1;
+  z-index: -1;
+}
+.buttons  button:hover{
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+ </style>
+
+  <meta charset="UTF-8">
+  <title>CodePen - Slick Tables</title>
+  <link rel="stylesheet" href="{% static 'analyse/analysepatientdata/analysepatientdata.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<table style="margin-left: auto; margin-right: auto;" >
+  <br><br><br><br>
+  <center><h2 style="color:white; ">World Cancer Report</h2></center>
+  <br><br>
+  <thead><center>
+    <tr>
+      <th style="text-align:center;margin-left:10px;">Name
+      <th  style= "text-align:center; margin-left:10px;">Total cancer upto 2022
+      <th>Visualize
+<!--      <th style= "text-align:center; margin-left:10px;">Show-->
+
+
+  </tr>
+
+
+
+  </thead>
+  <tbody>
+  <tr>
+  <td>Health Data of Men
+  <td>9342957
+    <td> <a href="/ana1/"><button class="1" style="background-color:white;border-radius:30px; padding:3px 10px; background-color:    white  ;">Show </button></a>
+<!--  <td><button style="background-color:white; border-radius:30px; padding:5px 7px; background-color:    white "><i class="fas fa-arrow-circle-right">Download </i></button>-->
+  </tr>
+  <td>Health Data of Women
+  <td>8751759
+  <td><a href="/ana2/"><button class="1" style="background-color:white;border-radius:30px; padding:3px 10px; background-color:    white ;">Show </button></a>
+<!--  <td><button style="background-color:white;  border-radius:30px; padding:5px 7px; background-color:    white  ;"> <i class="fas fa-arrow-circle-right">Download</i></button>-->
+
+
+
+
+<!--    <td><a href="/sym/{{x.id}}/"><button style="background-color:white;"><i class="fas fa-arrow-circle-right">Predict </i></button></a>-->
+
+  </tbody>
+
+</table></center>
+<!-- partial -->
+<!--<a href="/userhome/"> <button class="buttons"   >BACK</button></a>-->
+ <div class="buttons">
+      <a href="/analysehome/"> <button style="margin-bottom:-10px;margin-left:670px; ">BACK</button></a>
+<!--      <button>Hover Me</button>-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" >-->
+<!--{% load static %}-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>CodePen - Admin</title>-->
+<!--  <link rel="stylesheet" href="{% static 'admin.css' %}">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<script>-->
+<!--{% for msg in messages %}-->
+<!--    alert('{{msg}}');-->
+<!--{% endfor %}-->
+<!--</script>-->
+<!--&lt;!&ndash; partial:index.partial.html &ndash;&gt;-->
+<!--<div class="form_wrapper">-->
+<!--  <div class="form_container">-->
+<!--    <div class="title_container">-->
+<!--      <h2>Admin Login</h2>-->
+<!--    </div>-->
+<!--    <div class="row clearfix">-->
+<!--      <div class="">-->
+<!--        <form action="/admin_logi/" method="POST" enctype="multipart/form-data">-->
+<!--          {% csrf_token %}-->
+<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>-->
+<!--            <input type="email" name="email" placeholder="Email" required />-->
+<!--          </div>-->
+<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>-->
+<!--            <input type="password" name="password"  placeholder="Password" required />-->
+<!--          </div>-->
+<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>-->
+<!--            <input type="password" name="password" placeholder="Re-type Password" required />-->
+<!--          </div>-->
+
+
+
+<!--          <a href="/admin_home/"> <input class="button" type="submit" value="Login" /></a>-->
+<!--        </form>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<p class="credit">Developed by <a href="http://www.designtheway.com" target="_blank">Design the way</a></p>-->
+<!--&lt;!&ndash; partial &ndash;&gt;-->
+<!--  <script src='https://use.fontawesome.com/4ecc3dbb0b.js'></script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'><link rel="stylesheet" href="{% static 'adminlog/style.css' %}">
+
+</head>
+<body>
+<script>
+{% for msg in messages %}
+    alert('{{msg}}');
+{% endfor %}
+</script>
+<!-- partial:index.partial.html -->
+<body id="particles-js"></body>
+<div class="animated bounceInDown">
+  <div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form action="/admin_logi/" method="POST" enctype="multipart/form-data" class="box" onsubmit="return checkStuff()">
+        {% csrf_token %}
+      <h4>Admin<span></span></h4>
+      <h5>Sign in to your account.</h5>
+        <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <i class="typcn typcn-eye" id="eye"></i>
+        <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
+       <i class="typcn typcn-eye" id="eye"></i>
+        <input type="password" name="password" placeholder="Re-type Password"  id="pwd" autocomplete="off">
+<!--        <label>-->
+<!--          <input type="checkbox">-->
+<!--          <span></span>-->
+<!--          <small class="rmb">Remember me</small>-->
+        </label>
+<!--        <a href="#" class="forgetpass">Forget Password?</a>-->
+       <a href="/admin_home/">  <input type="submit" value="Sign in" class="btn1"></a>
+      <a href=""> <button> <input type="submit" value="Sign in" ></button></a>
+
+      </form>
+<!--        <a href="#" class="dnthave">Don’t have an account? Sign up</a>-->
+  </div>
+<!--       <div class="footer">-->
+<!--      <span>Made with <i class="fa fa-heart pulse"></i> <a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f"><a href="https://codepen.io/lordgamer2354">By Anees Khan</a></span>-->
+<!--    </div>-->
+</div>
+<!-- partial -->
+  <script src='https://cldup.com/S6Ptkwu_qA.js'></script><script  src="{% static 'adminlog/script.js' %}"></script>
+
+</body>
+</html>

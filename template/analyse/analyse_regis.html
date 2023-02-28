@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title> Register page</title>
+  <link rel="stylesheet" href="{% static 'register.css' %}">
+
+</head>
+<body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+{% for msg in messages %}
+swal("Goodjob!",'{{ msg }}', "success");
+
+{% endfor %}
+</script>
+<!-- partial:index.partial.html -->
+<div class="container">
+      <div class="login">
+         <div class="container">
+
+             <form action="/analys_regis/" method="POST" class="signin-form"  enctype="multipart/form-data">
+                {% csrf_token %}
+              <h1>ANALYSE REGISTER</h1>
+
+              <input type="text" placeholder="User Name" name="name" style="width:400px; height:35px; background-color: #eeeeef;">
+                 <br>
+              <input type="email" placeholder="Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="off" name="email">
+              <input type="text" placeholder="Phone Number" name="phone_number" pattern="[6789][0-9]{9,}"  autocomplete="off" maxlength="10" style="width:400px; height:35px;">
+
+              <input type="password" placeholder="Password"  autocomplete="off" name="password">
+              <input type="password" placeholder="Confirm Password"  autocomplete="off" name="confirm_password"><br>
+<!--              <input type="checkbox"><span>Remember me</span>-->
+<!--              <a href="#">Forgot password?</a>-->
+              <button>Register</button>
+<!--              <hr><p>Or Connect With</p><hr>-->
+<!--              <ul>-->
+<!--                  <li><i class="fab fa-facebook-f fa-2x"></i></li>-->
+<!--                  <li><i class="fab fa-twitter fa-2x"></i></li>-->
+<!--                  <li><i class="fab fa-github fa-2x"></i></li>-->
+<!--                  <li><i class="fab fa-linkedin-in fa-2x"></i></li>-->
+<!--              </ul>-->
+              <div class="clearfix"></div>
+
+         </div>
+      </div>
+      <div class="register">
+          <div class="container">
+              <i class="fas fa-user-plus fa-5x"></i>
+              <h2>Hello,friend!</h2>
+              <p>Enter your personal details and start journey with us</p>
+             <button style="background-color:white;"><i class="fas fa-arrow-circle-right"><a href="/analys_logi/">Login</a></i>
+
+
+          </div>
+          <button style="background-color:white;"><i class="fas fa-arrow-circle-right"><a href="/">Home</a></i>
+      </div>
+    </div>
+<!-- partial -->
+  <script src='https://kit.fontawesome.com/d2ed415255.js'></script>
+</form>
+</body>
+</html>

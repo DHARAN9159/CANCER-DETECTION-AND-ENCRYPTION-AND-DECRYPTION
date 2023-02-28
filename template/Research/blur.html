@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Slick Tables</title>
+  <link rel="stylesheet" href="{% static 'research/feature/feature.css' %}">
+
+</head>
+<body>
+<script>
+{% for msg in messages %}
+    alert('{{msg}}');
+{% endfor %}
+</script>
+<!-- partial:index.partial.html -->
+<table style="margin-left: auto; margin-right: auto;" >
+  <br><br><br><br>
+  <center><h1 style="color:white; ">BLUR</h1></center>
+  <br><br>
+  <thead><center>
+    <tr>
+      <th style="text-align:center;margin-left:10px;">Name
+      <th  style= "text-align:center; margin-left:10px;">Email
+      <th>Visualize
+<!--      <th style= "text-align:center; margin-left:10px;">Show-->
+
+
+  </tr>
+
+
+
+  </thead>
+  <tbody>
+  <tr>
+  {% for x in data %}
+    <tr>
+     <tr>
+<!--    <td>{{x.id}}-->
+    <td >{{ x.name }}
+    <td>{{ x.email }}
+      {% if x.image %}
+    <td><img src="{{x.image.url}}" alt="{{x.image}}" width="100" height="100"></td>
+      {% else%}
+    <td>-</td>
+      {% endif %}
+    <td> <a href="/blurimage/{{x.id}}/"><button style="background-color:white;border-radius:30px; padding:3px 10px; background-color:    white  ;">Show </button></a>
+<!--  <td><button style="background-color:white; border-radius:30px; padding:5px 7px; background-color:    white "><i class="fas fa-arrow-circle-right">Download </i></button>-->
+  {% endfor %}
+  </tr>
+<!--  <td>Health Data of Women-->
+<!--  <td>8751759-->
+<!--  <td><a href="/ana2/"><button style="background-color:white;border-radius:30px; padding:3px 10px; background-color:    white ;">Show </button></a>-->
+<!--  <td><button style="background-color:white;  border-radius:30px; padding:5px 7px; background-color:    white  ;"> <i class="fas fa-arrow-circle-right">Download</i></button>-->
+
+
+
+
+<!--    <td><a href="/sym/{{x.id}}/"><button style="background-color:white;"><i class="fas fa-arrow-circle-right">Predict </i></button></a>-->
+
+  </tbody>
+</table>
+<!-- partial -->
+
+</body></center>
+</html>

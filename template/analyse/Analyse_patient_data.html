@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+   <style>
+
+  .buttons button{
+  position: relative;
+  height: 40px;
+  width: 140px;
+  margin: 0 35px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.buttons button:first-child:hover{
+  background: linear-gradient( #1f8787, #1f8787);
+  background-size: 200%;
+}
+<!--button:last-child:hover{-->
+<!--  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);-->
+<!--  background-size: 400%;-->
+}
+.buttons  button:first-child:before,
+.buttons  button:last-child:before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.buttons button:first-child:hover:before,
+.buttons  button:last-child:hover:before{
+  opacity: 1;
+  z-index: -1;
+}
+.buttons  button:hover{
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+ </style>
+
+  <meta charset="UTF-8">
+  <title>CodePen - Slick Tables</title>
+  <link rel="stylesheet" href="{% static 'analyse/analysepatientdata/analysepatientdata.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<table>
+  <center><h1 style="color:white;">SUBMITIONS</h1></center>
+  <thead>
+    <tr>
+<!--      <th>-->
+        <th>Name
+      <th>Firstcheckup
+      <th>Othertest
+      <th>Digestive
+      <th>Kidney or liver
+      <th>Symptoms
+      <th>Algeric
+      <th>Multiple
+      <th>Genetic
+      <th>Bloodgroup
+      <th>Tobacco
+      <th>Alcohol
+      <th>Surgical
+      <th>Surgicalmessage
+      <th>Prediction
+  </thead>
+  <tbody>
+  {% for x in data %}
+    <tr>
+     <tr>
+<!--    <td>{{x.id}}-->
+      <td>{{ x.id }}
+    <td >{{ x.firstcheckup }}
+    <td>{{ x.othertest }}
+	<td>{{x.digestive}}
+    <td>{{ x.kord}}
+    <td>{{ x.symptoms}}
+	<td>{{ x.algeric}}
+    <td>{{ x.multiple }}
+    <td>{{ x.genetic }}
+    <td>{{ x.bloodgroup}}
+    <td>{{ x.tobacco }}
+    <td>{{ x.alcohol}}
+    <td>{{ x.surgical }}
+    <td>{{ x.surgicalmessage }}
+    <td><a href="/sym/{{x.id}}/"><button style="background-color:white border-radius: 50%; height: 30px;
+  width: 100px; "><i class="fas fa-arrow-circle-right">Predict </i></button></a>
+  {% endfor %}
+  </tbody>
+</table>
+<!-- partial -->
+<div class="buttons">
+      <a href="/analysehome/"> <button style="margin-bottom:-10px;margin-left:670px; ">BACK</button></a>
+<!--      <button>Hover Me</button>-->
+    </div>
+</body>
+</html>

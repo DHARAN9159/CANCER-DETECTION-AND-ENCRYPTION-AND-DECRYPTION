@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <title>popup prediction </title>
+    <link rel="stylesheet" href="{% static 'analyse/showpredicted/showpredicted.css' %}">
+</head>
+<body>
+<div class="container">
+    <a href="/showpredict/{{x.id}}/"> <button   type="submit" class="btn" onclick="openPopup()" >submit</button></a>
+
+        <div class="popup" id="popup" style="height: 500px; width: 800px;  background-color: white; text-align:center;">
+        <img src="{% static 'analyse/showpredicted/404-tick.png' %}">
+            <table style="width:710px; background-color: white;" >
+                <h1 style="background-color:white">Predicted</h1>
+                <tr>
+                <th style="text-align: center">name</th>
+                <th style="text-align: center">symptoms</th>
+                <th style="text-align: center">Dieases</th>
+                 </tr>
+                {% for x in data %}
+                <tr>
+                <td>{{x.patientname}}</td>
+                <td>{{x.pat_sym}}</td>
+                <td>{{x.patdieases}}</td>
+               </tr>
+                {% endfor %}
+
+            </table>
+</div>
+<script>
+    let popup=document.getElementById("popup");
+
+    function openPopup(){
+    popup.classList.add("open-popup");
+}
+    function closePopup(){
+    popup.classList.remove("open-popup");
+}
+</script>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,93 @@
+
+<html lang="en">
+{% load static %}
+<head>
+  <style>
+
+  .buttons button{
+  position: relative;
+  height: 40px;
+  width: 140px;
+  margin: 0 35px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.buttons button:first-child:hover{
+  background: linear-gradient( #de1826, #de1826);
+  background-size: 200%;
+}
+<!--button:last-child:hover{-->
+<!--  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);-->
+<!--  background-size: 400%;-->
+}
+.buttons  button:first-child:before,
+.buttons  button:last-child:before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.buttons button:first-child:hover:before,
+.buttons  button:last-child:hover:before{
+  opacity: 0;
+  z-index: -1;
+}
+.buttons  button:hover{
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+ </style>
+
+
+  <meta charset="UTF-8">
+  <title>CodePen - 404 page Animation </title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,100,300'><link rel="stylesheet" href="{% static 'analyse/alert/alert1.css' %}">
+
+</head>
+<body >
+<img src = "{% static 'admin/Dash2/nor15.jpg' %}"  style="margin-bottom:-100px; width:300px; height:300px;">
+<!-- partial:index.partial.html -->
+<div class="cont_principal">
+<div class="cont_error" >
+
+<!--style="background-image: url('/static/analyse/alert/alert.png');"-->
+<h1 style="color:black; margin-top:-250px; font-size:50x;">Normal</h1>
+  <p style="color:red;" ><b>Your result is generated </b> </p>
+  <p  style="color:red;">Please Go Throught it</p>
+  </div>
+<div class="cont_aura_1"></div>
+<div class="cont_aura_2"></div>
+</div>
+<!-- partial -->
+<div class="buttons">
+      <a href="/adminhome/"> <button style="margin-top:260px;margin-left:650px; margin-right:690px ">BACK</button></a>
+<!--      <button>Hover Me</button>-->
+    </div>
+  <script  src="{% static 'analyse/alert/script.js' %}"></script>
+
+</body>
+</html>

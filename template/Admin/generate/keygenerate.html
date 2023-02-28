@@ -1,0 +1,116 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+
+<head>
+          <style>
+
+            #bg{
+    background-size: 1900px 1000px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+      </style>
+    <title>Report Login Form Responsive Widget Template :: W3layouts</title>
+
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="{% static 'admin/generate/keygenerate/css/style.css' %}" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="{% static 'admin/generate/keygenerate/css/font-awesome.min.css' %}" type="text/css" media="all">
+    <script src="{% static 'hi/script.js' %}"></script>
+
+</head>
+
+<body style="background-image: url('/static/admin/generate/keygenerate/images/1.png');">
+<script>
+{% for msg in messages %}
+
+    alert('{{ msg }}');
+{% endfor %}
+
+</script>
+<script>
+function getRndInteger(min, max) {
+  return Math.floor(100 + Math.random() *100);
+}
+</script>
+<!--<button onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)">Click Me</button>-->
+<!--<p id="demo"></p>-->
+
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form" style="background-image: url('{% static 'img/H33.jpg' %}">
+<!--        <h1>Report Login Form</h1>-->
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree">
+<!--                        <h2>ENCRYPTION</h2>-->
+<!--                        <button onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)">Generate</button>-->
+<!--                        <form action="/generatekey/" method="POST">-->
+                            {% csrf_token %}
+
+<!--                           {% for i in datas %}&ndash;&gt;-->
+<!--                          <input type="text" class="text" name="email" placeholder="User Name" required="" value="{{i.email}}" autofocus>&ndash;&gt;-->
+<!--                           {% endfor %}&ndash;&gt;-->
+
+
+
+
+<!--                             <input type="text" class="password" name="key"  placeholder="Generate Key" required="" >-->
+
+
+                       <img style="height:80%; width:500%;"  src="{{da.image.url}}" alt="{{da.image}}" >
+
+                        <a href="/encryptimage/{{da.id}}">  <button class="btn" type="submit" >ENCRYPT</button></a>
+                        </form>
+
+
+
+<!--                            <button class="btn" style="margin-bottom:-10px; " type="submit">ok</button>-->
+<!--                        <p class="account">Don't have an account? <a href="#signup">Register</a></p>-->
+                    </div>
+<!--                    <h1 id="output" style="text-align: center">Random Number</h1>-->
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            <h1 id="demo" style="color:black"></h1>
+                            <td> <a href="/encrypt/"> <button class="button-9" role="button" STYLE="MARGIN-TOP:100PX;">BACK</button></a></td>
+
+<!--                             <button <a href="#" class="btn"  STYLE="MARGIN-TOP:100PX;" ></a>EMAIL</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+<!--            <p class="copy-footer-29">© 2021 Report Login Form. All rights reserved | Design by <a-->
+<!--                        href="https://w3layouts.com">W3layouts</a></p>-->
+        </div>
+        <!-- //copyright-->
+    </section>
+
+    <!-- //form section start -->
+
+</body>
+
+</html>
+
+<!-- HTML !-->
+
+
